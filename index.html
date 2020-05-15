@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="angular-test">
+<html lang="en" dir="ltr" ng-app="NameCalculator">
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js" charset="utf-8"></script>
@@ -8,8 +8,16 @@
     <title>Angular Test</title>
   </head>
   <body>
-    <div ng-controller="controller-one">
-      
+    <div ng-controller="NameCalculatorController">
+      <div>
+        Your Name:
+        <input type="text"
+        ng-model="name"
+        ng-keyup="displayNumeric();">
+      </div>
+      <div>
+        Total Numeric Value = {{totalValue}}.
+      </div>
     </div>
   </body>
 </html>
