@@ -12,11 +12,14 @@
     $scope.checkIfTooMuch = function() {
       if($scope.input.trim() === ""){
         $scope.results = "Please enter data first";
+        $scope.resultsStyle = {"color" : "red"}
+        $scope.inputStyle = {"border-color": "red"}
       }
       else{
         CountToResults(CountItems($scope.input));
+        $scope.resultsStyle = {"color" : "green"}
+        $scope.inputStyle = {"border-color": "green"}
       }
-
     }
 
     function CountToResults(count){
@@ -27,7 +30,7 @@
       var items = commaDelimitedString.split(",");
       var itemCount = 0;
       for(var i = 0; i < items.length; i++){
-        if(!(items[i].trim() === "")){
+        if(items[i].trim() !== ""){
           itemCount++;
         }
       }

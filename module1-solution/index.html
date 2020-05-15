@@ -15,7 +15,7 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-             <input id="lunch-menu" type="text" ng-model="input"
+             <input id="lunch-menu" type="text" ng-model="input" ng-style="inputStyle"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
          </div>
@@ -24,9 +24,11 @@
              (Note: Empty strings are not counted.)
          </div>
          <div class="form-group message">
-            {{results}}
+            <span ng-style="resultsStyle">{{results}}</span>
          </div>
    </div>
 
 </body>
 </html>
+
+<!--https://jamichaels97.github.io/angular-test/module1-solution/ -->
