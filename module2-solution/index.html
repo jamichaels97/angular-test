@@ -19,10 +19,10 @@
      <h2>To Buy:</h2>
      <ol>
        <li ng-repeat="item in toBuy.items">
-         {{ item.displayText }} <button type="button" ng-click="toBuy.purchaseItem($index)" name="button">Buy</button>
+         {{ item.displayText }} <button type="button" ng-click="toBuy.purchaseItem($index)" name="button">Bought</button>
        </li>
      </ol>
-     <div ng-if="toBuy.message" class="emptyMessage">{{toBuy.message()}}</div>
+     <div ng-if="toBuy.message()" class="emptyMessage">{{toBuy.message()}}</div>
     </div>
 
     <!-- Already Bought List -->
@@ -31,7 +31,7 @@
      <ol>
        <li ng-repeat="item in bought.items">{{ item.displayText }}</li>
      </ol>
-     <div ng-if="bought.message" class="emptyMessage">{{bought.message()}}</div>
+     <div ng-if="bought.message()" class="emptyMessage">{{bought.message()}}</div>
     </div>
   </div>
 </div>

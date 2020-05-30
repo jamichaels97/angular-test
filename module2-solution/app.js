@@ -34,7 +34,7 @@
     var bought = this;
 
     bought.items = ShoppingListCheckOffService.getPurchasedItems();
-    bought.message = function(){ bought.items.length > 0 ? "" : "Nothing bought yet"; }
+    bought.message = function(){ return bought.items.length > 0 ? "" : "Nothing bought yet"; }
   }
 
   // adds an 's' if appropriate.
