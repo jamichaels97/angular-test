@@ -48,7 +48,7 @@
     }
 
     var getMatchedItems = function(searchTerm){
-      var containsText = function(item){ return item.name.toLowerCase().includes(searchTerm.toLowerCase()); }
+      var containsText = function(item){ return item.description.toLowerCase().includes(searchTerm.toLowerCase()); }
       return getMenuItems().then(function(result){
         return result.filter(containsText);
       });
