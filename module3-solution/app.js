@@ -68,9 +68,9 @@
       .then(function(result){
         narrower.found = result;
 
-        if(found.length === 0)
-        {narrower.errorMessage = "Nothing found.";}
-        else{
+        if(narrower.found.length === 0){
+          narrower.errorMessage = "Nothing found.";
+        } else{
           narrower.errorMessage = "";
         }
       });
