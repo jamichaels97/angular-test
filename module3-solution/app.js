@@ -17,7 +17,7 @@
 
       return deferred.promise;
     }
-    
+
 
     var getMenuItemsFromApi = function(){
       return $http({
@@ -67,6 +67,12 @@
       MenuSearchService.getMatchedMenuItems(narrower.searchTerm)
       .then(function(result){
         narrower.found = result;
+
+        if(found.length === 0)
+        {narrower.errorMessage = "Nothing found.";}
+        else{
+          narrower.errorMessage = "";
+        }
       });
     }
 
