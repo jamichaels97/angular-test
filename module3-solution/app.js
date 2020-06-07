@@ -9,7 +9,6 @@
 
     var menuItems = [];
 
-
     var getMenuItemsCache = function(){
       var deferred = $q.defer();
 
@@ -22,14 +21,14 @@
     var getMenuItemsFromApi = function(){
       return $http({
         method: "GET",
-        url: "http://davids-restaurant.herokuapp.com/menu_items.json"
+        url: "https://davids-restaurant.herokuapp.com/menu_items.json"
       })
       .then(function(response){
         menuItems = response.data.menu_items;
         return menuItems;
       })
       .catch (function(error){
-        errorMessage = "Error fetching menu items in service";
+        var errorMessage = "Error fetching menu items in service";
         console.log(errorMessage);
       });
     }
