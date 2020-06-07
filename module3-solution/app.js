@@ -17,6 +17,7 @@
 
       return deferred.promise;
     }
+    
 
     var getMenuItemsFromApi = function(){
       return $http({
