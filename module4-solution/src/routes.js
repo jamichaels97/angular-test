@@ -26,10 +26,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider ) {
     controller: 'CategoryListController as categoryList',
     resolve: {
       categories: ['MenuDataService', function (MenuDataService) {
-        console.log("trying to call menu data service!");
         return MenuDataService.getAllCategories().
         then(function(results){
-          console.log(results);
           return results;
         });
       }]
@@ -41,7 +39,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider ) {
     templateUrl: 'src/menu/templates/items.template.html',
     controller: 'ItemsController as itemsCtrl',
     resolve: {
-      category: ['$stateParams', function($stateParams){ console.log("parameter:" + $stateParams.categoryShortName); return $stateParams.categoryShortName; }],
+      category: ['$stateParams', function($stateParams){ return $stateParams.categoryShortName; }],
       itemsForCategory: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
               return MenuDataService.getItemsForCategory($stateParams.categoryShortName)

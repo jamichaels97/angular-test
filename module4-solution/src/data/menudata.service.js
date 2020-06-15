@@ -37,9 +37,7 @@
         url: (ApiUrlBase + "/categories.json")
       })
       .then(function(response){
-        console.log(response.data);
         categories = response.data;
-        console.log(categories);
         return categories;
       })
       .catch (function(error){
@@ -49,14 +47,11 @@
     }
 
     search.getAllCategories = function(){
-      console.log("in getAllCategories.");
       if(categories.length > 0){
         return getCategoriesCache(); // the point of this is to cache the results so there is only one API call.
-        console.log(categories);
       }
       else {
         return getCategoriesFromApi();
-        console.log(categories);
       }
     }
 
