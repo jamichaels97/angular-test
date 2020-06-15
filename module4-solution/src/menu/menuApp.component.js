@@ -7,13 +7,6 @@ angular.module('MenuApp')
   bindings: {
     categories: '<'
   }
-})
-.component('itemList', {
-  templateUrl: 'src/menu/templates/itemList.template.html',
-  bindings:{
-    items: '<'
-  }
-})
-;
+});
 
 })();

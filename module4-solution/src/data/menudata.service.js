@@ -3,7 +3,7 @@
 
   angular.module('Data')
   .constant('ApiUrlBase', "https://davids-restaurant.herokuapp.com")
-  .service('MenuSearchService', ['$http', '$q', 'ApiUrlBase', function($http, $q, ApiUrlBase) {
+  .service('MenuDataService', ['$http', '$q', 'ApiUrlBase', function($http, $q, ApiUrlBase) {
     var search = this;
 
     search.getItemsForCategory = function(categoryShortName){
@@ -37,7 +37,9 @@
         url: (ApiUrlBase + "/categories.json")
       })
       .then(function(response){
-        categories = response.data.categories;
+        console.log(response.data);
+        categories = response.data;
+        console.log(categories);
         return categories;
       })
       .catch (function(error){
@@ -47,11 +49,14 @@
     }
 
     search.getAllCategories = function(){
-      if(menuItems.length > 0){
+      console.log("in getAllCategories.");
+      if(categories.length > 0){
         return getCategoriesCache(); // the point of this is to cache the results so there is only one API call.
+        console.log(categories);
       }
       else {
         return getCategoriesFromApi();
+        console.log(categories);
       }
     }
 
