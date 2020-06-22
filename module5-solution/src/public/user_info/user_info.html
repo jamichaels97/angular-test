@@ -1,0 +1,23 @@
+<div style="margin:2% 4%;">
+
+  <div ng-if="userInfoCtrl.userIsSet() === false">
+    <a ui-sref="public.signup">Not Signed Up Yet. Sign up Now!</a>
+  </div>
+
+  <div style="margin:2%;padding:2%;" ng-if="userInfoCtrl.userIsSet() === true">
+    <ul>
+      <li>First Name: {{ userInfoCtrl.user.firstName }}</li>
+      <li>Last Name: {{ userInfoCtrl.user.lastName }}</li>
+      <li>Email: {{ userInfoCtrl.user.email }}</li>
+      <li>Phone: {{ userInfoCtrl.user.phone }}</li>
+      <li>Favorite Food Number: {{ userInfoCtrl.user.favoriteMenuItem }}</li>
+    </ul>
+
+    <menu-item
+               menu-item="userInfoCtrl.selectedItem">
+    </menu-item>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,63 @@
+<div style="margin:6%" >
+  <legend>Registration</legend>
+  <form name='regForm' novalidate>
+
+    <input style="color:black;" type="text" name="firstName" placeholder="First"
+      ng-model="signupCtrl.user.firstName"
+      required>
+      {{ signupCtrl.user.firstName }}
+      <span
+        ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">
+        Please enter a first name.
+      </span>
+      <br><br>
+
+    <input style="color:black;" type="text" name="lastName" placeholder="Last"
+      ng-model="signupCtrl.user.lastName"
+      required>
+      {{ signupCtrl.user.lastName }}
+      <span
+        ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+        Please enter a last name.
+      </span>
+      <br><br>
+
+    <input style="color:black;" type="email" name="email" placeholder="Email"
+      ng-model="signupCtrl.user.email"
+      required>
+      {{ signupCtrl.user.email }}
+      <span ng-if="signupCtrl.email.$invalid && regForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br><br>
+
+    <input style="color:black;" type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signupCtrl.user.phone"
+      required
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      {{ signupCtrl.user.phone }}
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br><br>
+
+      <input style="color:black;" type="text" name="favoriteMenuItem" placeholder="A1"
+        ng-model="signupCtrl.user.favoriteMenuItem"
+        required>
+        {{ signupCtrl.user.favoriteMenuItem }}
+        <span ng-if="regForm.favoriteMenuItem.$error.required && regForm.favoriteMenuItem.$touched">
+          Please tell us your favorite menu item!
+        </span>
+        <br><br>
+
+    <button
+      ng-disabled="regForm.$invalid"
+      ng-click="signupCtrl.submit()">Submit</button>
+
+      <div style="margin-top: 10px;">
+        Form valid? {{ regForm.$valid }}
+      </div>
+  </form>
+  <p ng-if="signupCtrl.message">{{ signupCtrl.message }}</p>
+
+</div>
